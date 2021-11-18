@@ -1,7 +1,8 @@
 var btnStart = document.getElementById("start");
 var countdownDisplay = document.getElementById("counter-display");
-var qstnDisplay = document.getElementById("#question-display");
-var selectDisplay = document.getElementById("#selection-display");
+var qstnDisplay = document.getElementById("question-display");
+var selectDisplay = document.getElementById("selection-display");
+var answerDisplay = document.getElementById("answer-display");
 
 timer = 60;
 points = 0;
