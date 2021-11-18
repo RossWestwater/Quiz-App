@@ -10,19 +10,19 @@ indexValue = 0;
 
 var questionObj = [
   {
-  question: ["Who is the most powerful villain?"],
+  question: "Who is the most powerful villain?",
   selection: ["Darth Vader", "King Shark", "Thanos", "Hannibal Lecter"],
-  answer: ["Thanos"]
+  answer: "Thanos"
   },
   {
-  question: ["Which of the following is my dog?"],
+  question: "Which of the following is my dog?",
   selection: ["Sparkles", "Elmo", "Dribbles", "Speedbump"],
-  answer: ["Elmo"]
+  answer: "Elmo"
   },
   {
-  question: ["What is my favorite food?"],
+  question: "What is my favorite food?",
   selection: ["Pizza", "Ice Cream", "Asian Pears", "Swedish Dumplings"],
-  answer: ["Pizza"]
+  answer: "Pizza"
   },
   {
   question: "How do you open a jar lid?",
@@ -45,7 +45,7 @@ function chooseQstn() {
   console.log(questionObj[indexValue]);
   qstnDisplay.textContent = questionObj.question;
   console.log(generateQstn);
-  for (var i = 0; i < questionObj.selection.length; i++){
+  for (var i = 0; i < questionObj.question.length; i++){
     var element = questionObj.selection[i];
     console.log(element);
     var chsBtn = document.createElement("button");
@@ -53,6 +53,7 @@ function chooseQstn() {
     chsBtn.setAttribute("value", element);
     chsBtn.onclick=checkQuestion;
     selectDisplay.appendChild(chsBtn);
+    indexValue++;
   }
 };
 
