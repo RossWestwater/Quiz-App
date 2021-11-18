@@ -8,28 +8,28 @@ timer = 60;
 points = 0;
 indexValue = 0;
 
-var questionObj = 
-[{
-  question: "Who is the most powerful villain?",
+var questionObj = [
+  {
+  question: ["Who is the most powerful villain?"],
   selection: ["Darth Vader", "King Shark", "Thanos", "Hannibal Lecter"],
-  answer: "Thanos"
-},
-{
-  question: "Which of the following is my dog?",
+  answer: ["Thanos"]
+  },
+  {
+  question: ["Which of the following is my dog?"],
   selection: ["Sparkles", "Elmo", "Dribbles", "Speedbump"],
-  answer: "Elmo"
-},
-{
-  question: "What is my favorite food?",
+  answer: ["Elmo"]
+  },
+  {
+  question: ["What is my favorite food?"],
   selection: ["Pizza", "Ice Cream", "Asian Pears", "Swedish Dumplings"],
-  answer: "Elmo"
-},
-{
+  answer: ["Pizza"]
+  },
+  {
   question: "How do you open a jar lid?",
   selection: ["Twist it", "Pull it", "Break it", "Bop it"],
-  answer: "Elmo"
-},
-{
+  answer: "Twist it"
+  },
+  {
   question: "Which of the following is NOT a TA or Instructor of this course?",
   selection: ["Mike", "Karina", "Anthony", "David"],
   answer: "David"
@@ -42,6 +42,7 @@ function chooseQstn() {
     // clear all the stuff on the page to allow the score information to pop up
   }
   var generateQstn = questionObj[indexValue];
+  console.log(questionObj[indexValue]);
   qstnDisplay.textContent = questionObj.question;
   console.log(generateQstn);
   for (var i = 0; i < questionObj.selection.length; i++){
@@ -77,5 +78,6 @@ btnStart.addEventListener('click', function(){
   document.getElementById("postGame").hidden = false;
   document.getElementById("start").hidden = true;
   // Countdown();
+  chooseQstn();
 }, false);
 
