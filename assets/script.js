@@ -1,7 +1,8 @@
 var btnStart = document.getElementById("start");
 var countdownDisplay = document.getElementById("counter-display");
-var qstnDisplay = document.querySelector("#question-header");
-var ansrBtns = document.querySelector("#question-selection")
+var qstnDisplay = document.getElementById("#question-display");
+var selectDisplay = document.getElementById("#selection-display");
+
 timer = 60;
 points = 0;
 indexValue = 0;
@@ -40,15 +41,16 @@ function chooseQstn() {
     // clear all the stuff on the page to allow the score information to pop up
   }
   var generateQstn = questionObj[indexValue];
-  qstnDisplay.textContent = generateQstn.question;
-  for (var i = 0; i < question.selection.length; i++){
+  qstnDisplay.textContent = questionObj.question;
+  console.log(generateQstn);
+  for (var i = 0; i < questionObj.selection.length; i++){
     var element = questionObj.selection[i];
     console.log(element);
     var chsBtn = document.createElement("button");
     chsBtn.textContent = element;
     chsBtn.setAttribute("value", element);
     chsBtn.onclick=checkQuestion;
-    
+    selectDisplay.appendChild(chsBtn);
   }
 };
 
