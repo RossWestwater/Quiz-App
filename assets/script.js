@@ -69,6 +69,7 @@ btnStart.addEventListener(
     document.getElementById("start").hidden = true;
     Countdown();
     chooseQstn();
+    console.log(myScore);
   },
   false
 );
@@ -118,17 +119,25 @@ var confirmAnswer = function (event) {
 };
 
 var endGame = function () {
-  console.log(qstnDisplay);
   clearHTML();
-  console.log(qstnDisplay);
-  var initials = window.prompt(
-    "Your score was " +
-      points +
-      ". Please enter your initials to save your score!"
-  );
+  var input = document.createElement("div");
+  var initials = document.createElement("input");
+  initials.setAttribute("type", "text");
+  initials.setAttribute("placeholder","your initials");
+  var submitInit = document.createElement("button");
+  submitInit.setAttribute("type", "submit");
+  submitInit.textContent = "Submit";
+  submitInit.addEventListener("click", function(){
+    myScore.initials.push(initials.value);
+    myScore.score.push(points);
+    saveScore();
+    });
+  input.textContent = "Your score is " + points + ". Please enter your initials to save your score!";
+  input.append(initials, submitInit);
+  qstnDisplay.append(input);
 
-  myScore.initials.push(initials);
-  myScore.score.push(points);
+}
+  var saveScore = function(){
   localStorage.setItem("scores", JSON.stringify(myScore));
 
   var myScoreDisplay = document.createElement("div");
