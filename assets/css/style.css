@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
@@ -8,3 +6,66 @@
   display: inline-flex;
 }
 
+html {
+  background-color: antiquewhite;
+}
+
+div {
+  margin: auto;
+  width: 50%;
+}
+
+h1 {
+  text-align: center;
+  padding: 25px 10px;
+  background-color: burlywood;
+  background-image: linear-gradient(45deg, burlywood, teal, red);
+  background-blend-mode: multiply;
+  color: cornsilk;
+}
+
+header {
+  border:2px rgb(100, 59, 59) solid;
+  border-bottom:solid 10px rgb(100, 59, 59);
+}
+
+#start {
+  margin: 0 auto;
+  width: 50%;
+  display: block;
+}
+
+body {
+  background-color: cornsilk;
+}
+
+.swapMe {
+  text-align: center;
+}
+
+#counter-display {
+  text-align: center;
+}
+
+#question-display, #selection-display {
+  padding: 25px 0;
+  text-align: center;
+  font-size: larger;
+}
+
+#answer-display{
+  text-align: center;
+  font-size: larger;
+}
+
+p, li {
+  font-size: 20px;
+}
+
+ul {
+  font-size: 30px;
+}
+
+main {
+  border: solid 2px rgb(100, 59, 59);
+}

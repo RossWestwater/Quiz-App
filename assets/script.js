@@ -66,7 +66,7 @@ btnStart.addEventListener(
   function () {
     document.getElementById("preGame").hidden = true;
     document.getElementById("postGame").hidden = false;
-    document.getElementById("start").hidden = true;
+    document.getElementById("start").style.display = "none";
     Countdown();
     chooseQstn();
     console.log(myScore);
@@ -130,6 +130,7 @@ var endGame = function () {
   submitInit.addEventListener("click", function(){
     myScore.initials.push(initials.value);
     myScore.score.push(points);
+    input.textContent = "Your score " + points + " is listed below in spot #1. See how your score stacks up with other legends!";
     saveScore();
     });
   input.textContent = "Your score is " + points + ". Please enter your initials to save your score!";
@@ -154,6 +155,9 @@ var endGame = function () {
   }
   myScoreDisplay.appendChild(myScoreOrder);
   qstnDisplay.appendChild(myScoreDisplay);
+
+  document.querySelector("button").style.display = "none";
+  document.querySelector("textarea").style.display = "none";
 };
 
 var loadScore = function () {
